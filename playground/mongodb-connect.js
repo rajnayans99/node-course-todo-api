@@ -21,15 +21,15 @@ MongoClient.connect('mongodb://localhost:27017/MyApp',(error,dbObject)=>{
   //   console.log(res.ops[0]._id.getTimestamp());
   // });
 
-  // dbObject.collection('Todo1').insertOne({
-  //   name:'Raj Singh',
-  //   completed:false
-  // },(err,result)=>{
-  //   if(err){
-  //     return console.log('Unable to insert' , err);
-  //   }
-  //   console.log(JSON.stringify(result.ops,undefined,2));
-  // });
+  dbObject.collection('Todo1').insertOne({
+    text:'Eating...',
+    completed:false
+  },(err,result)=>{
+    if(err){
+      return console.log('Unable to insert' , err);
+    }
+    console.log(JSON.stringify(result.ops,undefined,2));
+  });
 
   dbObject.close();
 });
